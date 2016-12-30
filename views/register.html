@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+	<style type="text/css">
+		.msg {
+			display: none;
+		}
+		.intensity em {
+		    display: inline-block;
+		    background: #FBAA51;
+		    width: 55px;
+		    height: 20px;
+		    text-align: center
+		}
+
+		.intensity .active {
+		    background: rgba(0, 128, 0, 0.61)
+		}
+
+	</style>
+</head>
+<body>
+	<form method="post">
+	<div>
+	  用户名：  <input type="text" id="username" name="username" placeholder="请输入用户名" autofocus requiered/>
+	  <span class="msg"><i class="fa fa-lightbulb-o"> 5-25个字符，1个汉字为两个字符，推荐使用中文会员名</i></span>
+      <div id="count">0个字符</div>
+      </div>
+	  密码：    <input type="password" name="password" id="password" placeholder="请输入密码"/><span class="msg"></span>
+	  		<div class="intensity">
+	            <em class="active">弱</em><em>中</em><em>强</em>
+	       </div>
+
+	  <br />
+	  确认密码：<input type="password" id="password1" name="password1" placeholder="请再次输入密码" disabled=""/><span class="msg ">请再次输入</span><br />
+	  邮箱：    <input type="email" name="email" id="email" /><span class="msg"></span><br />
+		<input type="hidden" name="userId">
+
+	           <input type="button" disabled="" value="注册" id="register" />
+	</form>
+	{{ if success }}
+		<div>{{ success }}</div>
+	{{ /if }}
+	{{ if error }}
+		<div>{{ error }}</div>
+	{{ /if }}
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/form.js"></script>
+	<script type="text/javascript">
+		$(function(){ 
+	        $("#register").click(function(event){ 
+	            var username = $("#username").val();
+	            var password = $("#password").val();
+	            var password1 = $("#password1").val();
+	            var email = $("#email").val();
+	            if(password !== password1){ 
+	                $("#password").css("border","1px solid red");
+	                $("#password1").css("border","1px solid red");
+	            }else if(password === password1){
+	            var data = {"uname":username,"upwd":password,"email":email};
+	            $.ajax({ 
+	                url: '/register',
+	                type: 'post',
+	                data: data,
+	                success: function(data,status){ 
+	                    if(status == 'success'){ 
+	                        location.href = 'index';
+	                    }
+	                },
+	                error: function(data,err){ 
+	                        location.href = 'register';
+	                }
+	            }); 
+	        }
+	        });
+    });
+</script>
+	</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link href="stylesheets/normalize.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stylesheets/home.css">
+</head>
+<body class="wrap">
+	<div class="section">
+		<!--园区总览-->
+		<div class="area1">
+			<div class="yqzl">
+				<div class="title">园区总览</div>
+				<div class="yqData">
+					<div class="block1 f1">
+						<span class="a1">入园企业同比上升</span>
+						<span class="a2">30%</span>
+					</div>
+					<div class="block1 f2">
+						<span class="a1">今年入园企业</span>
+						<span class="a2">22家</span>
+					</div>
+					<div class="block1 f3">
+						<span class="a1">总共在园企业</span>
+						<span class="a2">36家</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end园区总览-->
+
+		<div class="section1">
+			<!--服务中心-->
+			<div class="area2">
+				<div class="fwzx">
+					<div class="title">服务中心</div>
+					<div class="total">总共46件</div>
+					<ul>
+						<li>
+							<div class="sq"><span>26</span></div>
+							申请
+						</li>
+						<li>
+							<div class="sl"><span>16</span></div>
+							受理
+						</li>
+						<li>
+							<div class="bj"><span>20</span></div>
+							办结
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--end服务中心-->
+			<!--协同办公-->
+			<div class="area3">
+				<div class="xtbg">
+					<div class="title">协同办公</div>
+					<div id="xtChart" style="width: 100%;height: 80%;position: absolute;top: 45px;"></div>
+					<div class="showData">33/188</div>
+				</div>
+			</div>
+			<!--end协同办公-->
+
+			<!--物业管理-->
+			<div class="area4">
+				<div class="wygl">
+					<div class="title">物业管理</div>
+					<div class="fwcz">
+						<div class="bline"></div>
+						<div class="mapData">15%</div>
+					</div>
+					<p>房屋出租率</p>
+				</div>
+			</div>
+			<!--end物业管理-->
+		</div>
+	</div>
+	<div class="section" style="height: 210px;">
+		<!--产业分析-->
+		<div class="area5">
+			<div class="cyfx">
+				<div class="title">产业分析</div>
+				<div id="cyChart" style="width: 100%;height: 80%;position: absolute;top: 45px;"></div>
+
+			</div>
+		</div>
+		<!--end产业分析-->
+		<!--招商引资-->
+		<div class="area6">
+			<div class="zsyz">
+				<div class="title">招商引资</div>
+				<div class="tab">
+					<div class="tab_menu">
+						<ul>
+							<li class="selected">无人机</li>
+							<li>北斗导航</li>
+						</ul>
+					</div>
+					<div class="tab_box">
+						<div>
+							<div class="aBox">
+								<ul>
+									<li class="dli">本月</li>
+									<li>
+										<div class="intention"><span>18</span></div>
+										意向企业
+									</li>
+									<li>
+										<div class="sign"><span>9</span></div>
+										签约企业
+									</li>
+								</ul>
+							</div>
+							<div class="bBox">
+								<ul>
+									<li class="dli">本年</li>
+									<li>
+										<div class="intention"><span>69</span></div>
+										意向企业
+									</li>
+									<li>
+										<div class="sign"><span>46</span></div>
+										签约企业
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div style="display: none">
+							<div class="aBox">
+								<ul>
+									<li class="dli">本月</li>
+									<li>
+										<div class="intention"><span>18</span></div>
+										意向企业
+									</li>
+									<li>
+										<div class="sign"><span>9</span></div>
+										签约企业
+									</li>
+								</ul>
+							</div>
+							<div class="bBox">
+								<ul>
+									<li class="dli">本年</li>
+									<li>
+										<div class="intention"><span>69</span></div>
+										意向企业
+									</li>
+									<li>
+										<div class="sign"><span>46</span></div>
+										签约企业
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end招商引资-->
+	</div>
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/lib/echarts/echarts.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		    var $div_li =$("div.tab_menu ul li");
+		    $div_li.click(function(){
+				$(this).addClass("selected")           
+					   .siblings().removeClass("selected");  
+	            var index =  $div_li.index(this);  
+				$("div.tab_box > div")   	
+						.eq(index).show()   
+						.siblings().hide(); 
+			})
+		})
+		// 路径配置
+		require.config({
+		　　paths: {
+		　　　　echarts: 'javascripts/lib/echarts',
+		　　}
+		});
+		// 使用
+		require(
+		　　　　　　[
+		　　　　　　　　'echarts',
+		　　　　　　　　'echarts/chart/pie',
+		　　　　　　　　'echarts/chart/line'
+		　　　　　　],
+		　　　　　　drawEcharts
+		);
+		 
+		function drawEcharts(ec){
+		　　drawPie(ec);
+		　　drawLine(ec);
+		}
+		function drawPie(ec){
+		　　var myBarChart = ec.init(document.getElementById('xtChart'));
+		　　option = {
+		    tooltip: {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b}: {c} ({d}%)"
+		    },
+		    legend: {
+		        orient: 'vertical',
+		        x: 'right',
+		        data:['在办','累计']
+		    },
+		    series: [
+		        {
+		            type:'pie',
+		            radius : ['50%', '70%'],
+		            itemStyle : {
+		                normal : {
+		                    label : {
+		                        show : false
+		                    },
+		                    labelLine : {
+		                        show : false
+		                    }
+		                },
+		                emphasis : {
+		                    label : {
+		                        show : false,
+		                        position : 'center',
+		                        textStyle : {
+		                            fontSize : '30',
+		                            fontWeight : 'bold'
+		                        }
+		                    }
+		                }
+		            },
+		            data:[
+		                {value:33, name:'在办'},
+		                {value:188, name:'累计'},
+		            ]
+		        }
+		    ],
+		    color: ['rgb(251,224,141)','rgb(33,195,147)']
+		};
+		myBarChart.setOption(option,true); //当setOption第二个参数为true时，会阻止数据合并
+		}
+		 
+		 
+		function drawLine(ec){
+		　　var myLineChart = ec.init(document.getElementById('cyChart'));
+		　　var option2 = {
+		　　　　title : {
+		　　　　text: '',
+		　　　　subtext: ''
+		　　},
+		　　tooltip : {
+		　　　　trigger: 'axis'
+		　　},
+		　　legend: {
+				orient: 'vertical',
+		        x: 'right',
+		　　　　data:['无人机','北斗导航']
+		　　},
+		　　xAxis : [
+		　　　　{
+		　　　　　　type : 'category',
+		　　　　　　boundaryGap : false,
+		　　　　　　data : ['0','3月','6月','9月','12月']
+		　　　　}
+		　　],
+		　　yAxis : [
+		　　　　{
+		　　　　　　type : 'value',
+		　　　　　　axisLabel : {
+		　　　　　　　　formatter: '{value}'
+		　　　　　　}
+		　　　　}
+		　　],
+		　　series : [
+		　　　　{
+		　　　　　　name:'无人机',
+		　　　　　　type:'line',
+					smooth: true,
+					itemStyle: {
+						normal: {
+							areaStyle: {type: 'default'}
+						}
+					},
+		　　　　　　data:[45,62,30,10,60]
+		　　　　},
+		　　　　{
+		　　　　　　name:'北斗导航',
+		　　　　　　type:'line',
+					smooth: true,
+					itemStyle: {
+						normal: {
+							areaStyle: {type: 'default'}
+						}
+					},
+		　　　　　　data:[45,10,20,40,30]
+		　　　　}
+		　　],
+		 color: ['rgb(28,220,168)','rgb(39,114,203)']
+		};
+		myLineChart.setOption(option2,true);
+		}
+		
+	</script>
+</body>
+</html>

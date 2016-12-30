@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本情况表</title>
+	<link href="javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="javascripts/lib/jqGrid/css/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/table.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/fileinput.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/component.css">
+</head>
+<body class="wrap">
+    <div class="whateverbox">
+      <div class="ifm-navbar">
+	      <ul>
+		      <li class="current"><a href="/zs">基本情况表 <span class="triangle"></span></a></li>
+	      </ul>
+	      <a class="btn btn-primary go" href="javascript:history.go(-1);">返回</a>
+      </div>
+
+      <div class="ifm-wrap">
+
+		<!--招商基本情况表-->
+		<div class="zsBlock1">
+			<div class="frm1">
+				<div class="title">基础信息</div>
+				<div class="zsContent baseInfo">
+					<form  id="jcxx" name="jcxx">
+						<table class="zsTable" id="attfile">
+							<tbody>
+								<tr>
+									<td align="right">企业名称<span class="red">*</span></td>
+									<td colspan="2">
+										<input class="form-control" id="entName" name="entName" placeholder="上海市高科技发展技术有限公司" type="text" maxlength="20">
+									</td>
+									<td align="right">注册资金<span class="red">*</span></td>
+									<td>
+										<input class="form-control" id="fund" name="fund" placeholder="1000万人民币" type="text" required>
+									</td>
+									<td align="right">实缴资金<span class="red">*</span></td>
+									<td>
+										<input class="form-control" id="money" name="money" placeholder="1000万人民币" type="text" required>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">企业代码</td>
+									<td colspan="2">
+										<input class="form-control" id="code" name="code" placeholder="88888888888" type="text">
+									</td>
+									<td align="right">企业注册时间</td>
+									<td>
+										<input class="form-control" id="entTime" name="entTime" placeholder="2016-06-06" type="text" onClick="WdatePicker()">
+									</td>
+									<td align="right">注册至园区时间</td>
+									<td>
+										<input class="form-control" id="gardenTime" name="gardenTime" placeholder="2026-06-06" type="text" onClick="WdatePicker()">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">组织机构代码证号</td>
+									<td colspan="2">
+										<input class="form-control" id="jgdm" name="jgdm" placeholder="88888888888" type="text">
+									</td>
+									<td align="right">招商类型</td>
+									<td>
+										<select disabled="disabled">
+											<option>注册企业</option>
+											<option>入驻企业</option>
+										</select>
+									</td>
+									<td align="right">相关业务</td>
+									<td>
+										<select disabled="disabled">
+											<option>北斗产业相关</option>
+											<option>无人机产业相关</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">注册资本</td>
+									<td colspan="2">
+										<input class="form-control" id="zccb" name="zccb" placeholder="1000万人民币" type="text">
+									</td>
+									<td align="right">企业登记类型<span>*</span></td>
+									<td>
+										<select required disabled="disabled">
+											<option>国有企业</option>
+											<option>集体企业</option>
+											<option>私营企业</option>
+											<option>联营企业</option>
+											<option>股份合作企业</option>
+											<option>外商投资企业</option>
+											<option>有限责任公司</option>
+											<option>股份有限公司</option>
+											<option>港澳台商投资企业</option>
+											<option>国家机关</option>
+											<option>高等院校</option>
+											<option>研究院所</option>
+											<option>社会团体</option>
+											<option>其他</option>
+										</select>
+									</td>
+									<td align="right">税务登记号</td>
+									<td>
+										<input class="form-control" id="swdj" name="swdj" placeholder="88888888888" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">营业期限</td>
+									<td colspan="2">
+										<input class="form-control" id="yyqx" name="yyqx" placeholder="2026-06-06" type="text">
+									</td>
+									<td align="right">三证附件资料上传</td>
+									<td colspan="3">
+										<!-- <input id="file-fr" name="file-fr[]" type="file" multiple> -->
+										<img src="images/1.png" height="100" width="100"><img src="images/2.png" height="100" width="100"><img src="images/3.png" height="100" width="100">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">注册地址</td>
+									<td colspan="2">
+										<input class="form-control" id="zcdz" name="zcdz" placeholder="上海市浦东新区张江高科技园区" type="text">
+									</td>
+									<td rowspan="2" align="right">邮编</td>
+									<td colspan="3" rowspan="2">
+										<input class="form-control" id="psotCode" name="psotCode" placeholder="200000" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">企业办公地址</td>
+									<td colspan="2">
+										<input class="form-control" id="bgdz" name="bgdz" placeholder="上海市浦东新区张江高科技园区" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">开户银行</td>
+									<td colspan="2">
+										<input class="form-control" id="khyh" name="khyh" placeholder="中国工商银行" type="text">
+									</td>
+									<td align="right">开户名</td>
+									<td colspan="3">
+										<input class="form-control" id="khm" name="khm" placeholder="张先生" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">信用等级</td>
+									<td colspan="2">
+										<input class="form-control" id="xydj" name="xydj" placeholder="AAA" type="text">
+									</td>
+									<td align="right">账号</td>
+									<td colspan="4">
+										<input class="form-control" id="zh" name="zh" placeholder="688688688688688" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">企业隶属</td>
+									<td colspan="2">
+										<input class="form-control" id="qyls" name="qyls" placeholder="市属" type="text">
+									</td>
+									<td align="right">注册登记类型</td>
+									<td colspan="3">
+										<input class="form-control" id="zcdjlx" name="zcdjlx" placeholder="有限责任公司" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">企业特性</td>
+									<td colspan="2">
+										<input class="form-control" id="qytx" name="qytx" placeholder="合资企业" type="text">
+									</td>
+									<td align="right">是否无人机相关企业</td>
+									<td colspan="3">
+										<input class="form-control" id="wrjxg" name="wrjxg" placeholder="是" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">备选<br>企业字号<span class="red">*</span></td>
+									<td colspan="6">
+										<textarea id="qyzh" name="qyzh" class="textarea" placeholder="高科技" required></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">经营范围<span class="red">*</span></td>
+									<td colspan="6">
+										<textarea name="jyfw" id="jyfw" class="textarea" placeholder="航空电子设备、自动控制设备、无人驾驶航空器" required></textarea>
+										(依法须经批准的项目，经相关部门的批准后方可开展经营活动)
+									</td>
+								</tr>
+								<tr>
+									<td align="right">主营业务<span class="red">*</span></td>
+									<td colspan="6">
+										<input class="form-control" id="zyyw" name="zyyw" placeholder="无人驾驶航空器" type="text" required>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">主要自有技术及产品<span class="red">*</span></td>
+									<td colspan="6">
+										<input class="form-control" id="zycp" name="zycp" placeholder="航空电子设备、自动控制设备" type="text" required>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">其中：无人机关联技术及产品<span class="red">*</span></td>
+									<td colspan="6">
+										<input class="form-control" id="wrjcp" name="wrjcp" placeholder="无人驾驶航空器" type="text" required>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">预估年产值<span class="red">*</span></td>
+									<td colspan="2">
+										第一年年产值：<br>
+										<input type="text" name="yncz" placeholder="9999" required>万元
+									</td>
+									<td colspan="2">
+										第二年年产值：<br>
+										<input type="text" name="encz" placeholder="9999" required>万元
+									</td>
+									<td colspan="2">
+										第三年年产值：<br>
+										<input type="text" name="sncz" placeholder="9999" required>万元
+									</td>
+								</tr>
+								<tr>
+									<td align="right">预估年税收<span class="red">*</span></td>
+									<td colspan="2">
+										第一年年税收：<br>
+										<input type="text" name="ynss" placeholder="999" required>万元
+									</td>
+									<td colspan="2">
+										第二年年税收：<br>
+										<input type="text" name="enss" placeholder="999" required>万元
+									</td>
+									<td colspan="2">
+										第三年年税收：<br>
+										<input type="text" name="snss" placeholder="999" required>万元
+									</td>
+								</tr>
+								<tr id="trJoin">
+									<td rowspan="2" align="right">投资人<span class="red">*</span></td>
+									<td align="center">名称或姓名</td>
+									<td colspan="4" align="center">证照号</td>
+									<td align="center">联系电话</td>
+								</tr>
+								<tr id="trInsert0">
+									<td>
+										<input class="form-control" id="investor[0].sname" name="investor[0].sname" placeholder="张一" type="text" required>
+									</td>
+									<td colspan="4">
+										<input class="form-control" id="investor[0].IDnum" name="investor[0].IDnum" placeholder="20000000000000000" type="text" required>
+									</td>
+									<td>
+										<div class="InputsWrapper">
+											<input class="form-control" id="investor[0].tel" name="investor[0].tel" placeholder="18668886888" type="text" required>
+											<input type="button" id="AddMoreFileBox" value="增加行" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2" align="right">企业法人代表情况</td>
+									<td align="center">姓名</td>
+									<td align="center">性别</td>
+									<td align="center">身份证号</td>
+									<td align="center">最高学历</td>
+									<td align="center">任现职时间</td>
+									<td align="center">电话</td>
+								</tr>
+								<tr>
+									<td><input class="form-control" id="frName" name="frName" placeholder="王浩" type="text"></td>
+									<td><input class="form-control" id="frSex" name="frSex" placeholder="男" type="text"></td>
+									<td><input class="form-control" id="frID" name="frID" placeholder="20000000000000001" type="text"></td>
+									<td><input class="form-control" id="frDegree" name="frDegree" placeholder="博士" type="text"></td>
+									<td><input class="form-control" id="frTime" name="frTime" placeholder="2016-01-01" type="text"></td>
+									<td><input class="form-control" id="frTel" name="frTel" placeholder="18668886888" type="text"></td>
+								</tr>
+								<tr>
+									<td align="right">行政部门联系人</td>
+									<td>
+										<input class="form-control" id="xzName" name="xzName" placeholder="李磊" type="text">
+									</td>
+									<td rowspan="3" align="right">电话</td>
+									<td>
+										<input class="form-control" id="xzTel" name="xzTel" placeholder="18668886888" type="text">
+									</td>
+									<td rowspan="3" align="right">电子邮件</td>
+									<td colspan="2">
+										<input class="form-control" id="xzEmail" name="xzEmail" placeholder="6888888@outlook.com" type="email">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">科研部门联系人</td>
+									<td>
+										<input class="form-control" id="kyName" name="kyName" placeholder="赵方" type="text">
+									</td>
+									<td><input class="form-control" id="kyTel" name="kyTel" placeholder="688688688" type="text"></td>
+									<td colspan="2">
+										<input class="form-control" id="kyEmail" name="kyEmail" placeholder="12366@outlook.com" type="email">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">财务部门联系人</td>
+									<td>
+										<input class="form-control" id="cwName" name="cwName" placeholder="王亮" type="text">
+									</td>
+									<td><input class="form-control" id="cwTel" name="cwTel" placeholder="18668886888" type="text"></td>
+									<td colspan="2">
+										<input class="form-control" id="cwEmail" name="cwEmail" placeholder="123456@outlook.com" type="email">
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" align="right">企业职工人数</td>
+									<td>
+										<input class="form-control" id="qyzg" name="qyzg" placeholder="20000" type="text">
+									</td>
+									<td align="right">大专以上</td>
+									<td>
+										<input class="form-control" id="dz" name="dz" placeholder="15000" type="text">
+									</td>
+									<td align="right">研发人员</td>
+									<td>
+										<input class="form-control" id="yfry" name="yfry" placeholder="10000" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" align="right">企业中层以上管理人员总数</td>
+									<td>
+										<input class="form-control" id="sum1" name="sum1" placeholder="500" type="text">
+									</td>
+									<td colspan="2" align="right">其中大学本科以上人员数</td>
+									<td colspan="2">
+										<input class="form-control" id="sum2" name="sum2" placeholder="400" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">申请专利数</td>
+									<td rowspan="2" align="right">发明</td>
+									<td>
+										<input class="form-control" id="fmsqs" name="fmsqs" placeholder="999" type="text">
+									</td>
+									<td rowspan="2" align="right">实用新型</td>
+									<td>
+										<input class="form-control" id="sysqs" name="sysqs" placeholder="999" type="text">
+									</td>
+									<td align="right">外观设计</td>
+									<td>
+										<input class="form-control" id="wgsqs" name="wgsqs" placeholder="999" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">专利授权数</td>
+									<td>
+										<input class="form-control" id="fmzls" name="fmzls" placeholder="888" type="text">
+									</td>
+									<td>
+										<input class="form-control" id="syzls" name="syzls" placeholder="888" type="text">
+									</td>
+									<td align="right">外观设计</td>
+									<td>
+										<input class="form-control" id="syzls" name="wgzls" placeholder="888" type="text">
+									</td>
+								</tr>
+								<tr>
+									<td align="right">企业需要说明的问题：</td>
+									<td colspan="5">
+										<textarea name="problem" id="problem" class="textarea"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center">股东名称</td>
+									<td align="center">是否上市公司</td>
+									<td align="center">是否境外公司或外籍</td>
+									<td align="center">所占股份（%）</td>
+									<td colspan="2" align="center">投资方式</td>
+								</tr>
+								<tr id="trAdd0">
+									<td colspan="2">
+										<input class="form-control" id="stockholder[0].gdName" name="stockholder[0].gdName" placeholder="赵亮" type="text">
+									</td>
+									<td align="center">
+										是<input type="radio" id="stockholder[0].ssy" name="stockholder[0].ssy" checked="checked">
+										否<input type="radio" id="stockholder[0].ssn" name="stockholder[0].ssn">
+									</td>
+									<td align="center">
+										是<input type="radio" id="stockholder[0].jwy" name="stockholder[0].jwy" checked="checked">
+										否<input type="radio" id="stockholder[0].jwn" name="stockholder[0].jwn">
+									</td>
+									<td>
+										<input class="form-control" id="stockholder[0].gf" name="stockholder[0].gf" placeholder="30%" type="text">
+									</td>
+									<td colspan="2">
+										<div class="InputsCon">
+											<input class="form-control" id="stockholder[0].tzfs" name="stockholder[0].tzfs" placeholder="" type="text">
+											<input type="button" id="AddMoreLine" value="增加行" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										简述企业主要产品、经营业绩、行业中的地位和竞争优势：<br>
+										<textarea name="ys" id="ys" class="textarea" placeholder="微型4/3相机出色的影像性能与强大易用的“悟”Inspire飞行平台相结合，开启专业级航拍的全新时代"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										简述组织结构、领军人物、管理团队：<br>
+										<textarea name="td" id="td" class="textarea" placeholder="采取直线制，公司所有权与经营权分离，实行总经理负责制。总经理下设营销副总经理、技术副总经理、财务副总经理、人事副总经理"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										简述企业创新能力建设情况：<br>
+										<textarea name="js" id="js" class="textarea" placeholder="利用科技中介机构、技术转移机构等搭建科技人员与企业双向选择的信息交流平台，形成科技人员服务企业的长效机制。"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										简述企业发展的重要阶段：<br>
+										<textarea name="zyjd" id="zyjd" class="textarea" placeholder="初创期；步入正轨，出显成效；高速发展期；成熟稳定器；寻找生态圈，实现可持续发展"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										简述企业今后三年的发展思路：<br>
+										<textarea name="fzsl" id="fzsl" class="textarea" placeholder="抓住机遇，向外拓展，向内挖潜，扩大品牌美誉，实现跨越式发展;申报并力获通过ISO9002国际质量管理体系认证，强化内部管理"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										申办企业：<span class="red">*</span><br>
+										<textarea name="sbqy" id="sbqy" class="textarea" required placeholder="上海市高科技发展技术有限公司"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										上海优澈智能科技发展有限公司评估意见：<span class="red">*</span><br>
+										<textarea name="yczn" id="yczn" class="textarea" required placeholder="同意"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7">
+										上海西虹桥商务开发有限公司核准意见：<span class="red">*</span><br>
+										<textarea name="xhq" id="xhq" class="textarea" required placeholder="同意"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="7" align="center"><input  type="submit" name="infosave" id="infosave" class="save" value="保存"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="frm2" style="margin-top: 6px;">
+				<div class="title">客户跟踪<a href="/khqzbj" class="btn btn-info btn-xs go">新建跟踪</a></div>
+				<div style="background-color: #fff;">
+					<table id="jqGrid" class="table"></table>  
+    				<div id="jqGridPager"></div>  
+				</div>
+			</div>
+		</div>
+		<div class="zsBlock2">
+			<div class="title">跟踪预览</div>
+			<div class="main">
+				<ul class="cbp_tmtimeline">
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span></time>
+						<div class="cbp_tmicon"><img src="images/icon_map.png"></div>
+						<div class="cbp_tmlabel">
+							电话已经联系，本周参观 	
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span></time>
+						<div class="cbp_tmicon"><img src="images/icon_cup.png"></div>
+						<div class="cbp_tmlabel">
+							电话已经联系，本周参观 	
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-13 05:36"><span>4/13/13</span></time>
+						<div class="cbp_tmicon"><img src="images/icon_sw.png"></div>
+						<div class="cbp_tmlabel">
+							电话已经联系，本周参观 	
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>4/15/13</span></time>
+						<div class="cbp_tmicon"><img src="images/icon_tel.png"></div>
+						<div class="cbp_tmlabel">
+							电话已经联系，本周参观 	
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-16 21:30"><span>4/16/13</span></time>
+						<div class="cbp_tmicon"><img src="images/icon_sw.png"></div>
+						<div class="cbp_tmlabel">
+							电话已经联系，本周参观 	
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--end招商基本情况表-->
+
+      </div>
+    </div>
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script src="javascripts/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/lib/jqGrid/js/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="javascripts/lib/jqGrid/js/i18n/grid.locale-en.js"></script>
+    <script type="text/javascript" src="javascripts/lib/fileinput/fileinput.js"></script>
+    <script type="text/javascript" src="javascripts/lib/fileinput/fileinput_locale_zh.js"></script>
+    <script type="text/javascript" src="javascripts/lib/slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="javascripts/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/modernizr.custom.js"></script>
+    <script type="text/javascript" src="javascripts/lib/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="javascripts/lib/validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="javascripts/lib/validation/dist/localization/messages_zh.js"></script>
+    <script type="text/javascript" src="javascripts/jbxkb.js"></script>
+    
+</body>
+</html>

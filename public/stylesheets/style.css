@@ -1,0 +1,137 @@
+* {
+	outline: none;
+}
+/* header */
+.header {
+	position: fixed;
+	top: 0;
+	background-color: #478de4;
+	height: 86px;
+	width: 100%;
+	z-index: 100;
+}
+.logo {
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	width: 118px;
+	height: 67px;
+	text-indent: -999px;
+	position: absolute;
+	left: 82px;
+	top: 10px;
+}
+.header .right {
+	position: absolute;
+	right: 46px;
+	top: 23px;
+}
+.header .right a {
+	color: #fff;
+	text-decoration: none;
+	line-height: 40px;
+}
+.set {
+	background-image: url("../images/sz.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 32px;
+    position: relative;
+    text-indent: -9999px;
+    width: 32px;
+}
+.set:hover {
+	background-position: -80px 0;
+}
+.out {
+	background-image: url("../images/zx.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 32px;
+    position: relative;
+    text-indent: -9999px;
+    width: 32px;
+}
+.out:hover {
+	background-position: -80px 0;
+}
+/* end header */
+
+/* footer */
+.footer {
+	position: fixed;
+	bottom: 0;
+	background-color: #478de4;
+	height: 30px;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+/* end footer */
+/* 菜单 */
+.siderbar {
+	background-color: #242831;
+    height: 100%;
+    left: 0;
+    top: 86px;
+    position: fixed;
+    width: 12%;
+}
+.siderbar ul {
+	list-style: none;
+	margin-top: 44px;
+	padding: 0;
+	margin-left: 0;
+}
+.siderbar ul li a {
+	position: relative;
+	display: block;
+	color: #fff;
+	padding-left: 44px;
+	height: 50px;
+	text-decoration: none;
+	line-height: 50px;
+}
+.collapse {
+    display: none;
+}
+.collapse.in {
+    display: block;
+}
+.siderbar ul li a:hover,.siderbar ul li.active a {
+	background-color: #478de4;
+}
+.siderbar ul li ul {
+	margin-top: 0;
+	background-color: #3b3f4a;
+	padding: 18px 0;
+}
+.siderbar ul li.active ul li a {
+	background-color: #3b3f4a;
+	height: 37px;
+	line-height: 37px;
+}
+.siderbar ul li.active ul li a:hover,.siderbar ul li.active ul li a.active {
+	background-color: #4975af;
+}
+.arrow {
+	position: absolute;
+	right: 12px;
+    top: 20%;
+	background-image: url(../images/arrow-down.png);
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+.siderbar ul li.active .arrow{
+	background-image: url(../images/arrow-up.png);
+}
+
+/* end菜单 */
+.frame {
+    bottom: 30px;
+    left: 12%;
+    position: absolute;
+    right: 0;
+    top: 86px;
+}

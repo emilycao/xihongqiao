@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+</head>
+<body>
+	<form method="post" onsubmit="return false" >
+		<input type="hidden" name="id" id="id">
+	  用户名：<input type="text" id="username" name="username" placeholder="请输入用户名" required/><br />
+	  密码：  <input type="password" id="password" name="password" placeholder="请输入密码" required id="login"/><br />
+	         <input type="button" value="登录" id="login" />
+	         <input type="button" value="注册" id="register" />
+	</form>
+	{{ if success }}
+		<div>{{ success }}</div>
+	{{ /if }}
+	{{ if error }}
+		<div>{{ error }}</div>
+	{{ /if }}
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){ 
+			$("#register").click(function(){ 
+	            location.href = '/register';
+	        });
+	        $("#login").click(function(){ 
+	            var username = $("#username").val();
+	            var password = $("#password").val();
+	            var data = {"uname":username,"upwd":password};
+	            $.ajax({ 
+	                url:'/login',
+	                type:'post',
+	                data: data,
+	                success: function(data,status){ 
+	                    if(status == 'success'){ 
+	                        location.href = 'index';
+	                    }
+	                },
+	                error: function(data,status){ 
+	                    if(status == 'error'){ 
+	                        location.href = 'login';
+	                    }
+	                }
+	            });
+	        });
+    });
+	</script>
+</body>
+</html>

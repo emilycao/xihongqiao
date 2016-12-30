@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容添加</title>
+	<style type="text/css">
+		.error {
+			font-size: 12px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<form id="blogAdd" method="post">
+	标题:<br/>
+	<input type="text" id="title" name="title"  required /><br/>
+	摘要：<br/>
+	<input type="text" id="abstract"  name="abstract" required /><br/>
+	正文:<br/>
+	<textarea  id="post" name="post" rows="20" cols="100" required ></textarea><br/>
+	<input type="submit" value="发表" class="submit" />
+	</form>
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/lib/validation/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="javascripts/lib/validation/dist/localization/messages_zh.js"></script>
+	<script type="text/javascript" src="javascripts/module/blog/blogAdd.js"></script>
+</form>
+</body>
+</html>

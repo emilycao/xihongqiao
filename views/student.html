@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>student</title>
+	<link href="javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="javascripts/lib/jqGrid/css/ui.jqgrid-bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div class="content-pager">  
+		<table id="jqGrid01"></table>  
+		<div id="jqGridPager01"></div>  
+		<!-- {{ each students as student i }}
+			<p>{{student.userName}}</p>
+		{{ /each }} -->
+	</div>  
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script src="javascripts/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/lib/jqGrid/js/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="javascripts/lib/jqGrid/js/i18n/grid.locale-en.js"></script>
+    <script type="text/javascript" src="javascripts/student.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function () {  
+			/*$.ajax({//先用ajax与后台交互获取要显示的数据  
+			            url: "/userFindAction",//与后台交互的url  
+			            type: "GET",//ajax提交方式  
+			            dataType: "json",//从服务器端返回的数据类型  
+			            success: function (data) {  
+
+			    //data是从服务器返回的json对象，其中result是我要显示的数据内容  
+			                window.datas = data.result;  
+
+			                //设置content-pager高度  
+			                $(".content-pager").height($(window).height() - 400);  
+
+			    //（4）.配置jqGrid的属性并且渲染  
+			    //（5）.配置导航条的属性  
+			    },  
+			            error: function () {  
+			            }  
+			        }  
+			);  */
+		});  
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>部门管理编辑</title>
+	<link href="javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stylesheets/component.css">
+	<style type="text/css">
+		.error {
+			font-size: 12px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<form id="deptForm">
+		{{each departments as item i}}
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<input type="hidden" name="_id" id="_id" value="{{ item.id }}">
+					<td align="right">部门名称：</td>
+					<td><input id="name" type="text" name="name" value="{{ item.name }}" ></td>
+					<td align="right">部门房间：</td>
+					<td><input id="room" type="text" name="room" value="{{ item.room }}"></td>
+				</tr>
+				<tr>
+					<td align="right">部门人数：</td>
+					<td><input id="num" type="text" name="num" value="{{ item.num }}"></td>
+					<td align="right">部门经理：</td>
+					<td><input id="manager" type="text" name="manager" value="{{ item.manager }}"></td>
+				</tr>
+				<tr>
+					<td align="right">部门电话：</td>
+					<td><input id="tel" type="text" name="tel" value="{{ item.tel }}"></td>
+					<td align="right">部门职责：</td>
+					<td><input id="duty" type="text" name="duty" value="{{ item.duty }}"></td>
+				</tr>
+				<tr>
+					<td colspan="4" align="center"><input type="submit" name=""  class="submit" value="保存"></td>
+				</tr>
+			</tbody>
+		</table>
+		{{/each}}
+	</form>
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script src="javascripts/lib/layer/layer.js"></script>
+    <script src="javascripts/mylayer.js"></script>
+	<script type="text/javascript" src="javascripts/lib/validation/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="javascripts/lib/validation/dist/localization/messages_zh.js"></script>
+    <script type="text/javascript" src="javascripts/module/system/department/deptEdit.js"></script>
+</body>
+</html>

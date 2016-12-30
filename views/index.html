@@ -1,0 +1,58 @@
+{{include 'common/header'}}
+	<!--头部-->
+	<div class="header">
+		<div class="logo">西虹桥北斗产业园“智慧园区”</div>
+		<div class="right">
+			<a href="#">您好：{{ user.name }} </a>
+			<a href="#" class="set">系统设置</a>
+			<a href="#" class="out">退出</a>
+		</div>
+	</div>
+	<!--菜单-->
+	<div class="siderbar">
+		<div class="metismenu" id="menu">
+			<ul>
+				{{each list as value i}}
+					{{if value.level == 1}}
+						<li class="active">
+							<a href="{{value.url}}" target="mainIframe">
+							{{value.name}}
+							</a>
+						</li>
+					{{/if}}
+					{{if value.level == 2}}
+						<li>
+							<a href="{{value.url}}" aria-expanded="false">
+								{{value.name}}
+								<span class="arrow"></span>
+							</a>
+							<ul aria-expanded="false">
+							{{each value.submenu as value j}}
+								<li>
+									<a href="{{value.url}}" target="mainIframe">
+									{{value.name}}
+									</a>
+									{{if value.level == 3 }}
+										<ul aria-expanded="false">
+											{{each value.submenu as value k}}
+											<li>
+												<a href="{{value.url}}" target="mainIframe">
+												{{value.name}}
+												</a>
+											</li>
+											{{/each}}
+										</ul> 
+									{{/if}}
+								</li>
+								{{/each}}
+							</ul>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="frame" id="mainBox">
+        <iframe id="mainIframe" name="mainIframe"  allowtransparency="ture" height="100%"  width="100%" src="/home" frameborder="0"  noresize="noresize" > 浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。 </iframe>
+    </div>
+{{include 'common/footer'}}

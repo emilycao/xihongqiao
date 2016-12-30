@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户管理添加</title>
+	<link href="javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stylesheets/component.css">
+	<style type="text/css">
+		.error {
+			font-size: 12px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<form id="deptForm">
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<td align="right">用户名：</td>
+					<td><input id="name" type="text" name="name" ></td>
+					<td align="right">所属部门：</td>
+					<td><input id="deptName" type="text" name="deptName"></td>
+				</tr>
+				<tr>
+					<td align="right">工作岗位：</td>
+					<td><input id="job" type="text" name="job"></td>
+					<td align="right">工作职务：</td>
+					<td><input id="duty" type="text" name="duty"></td>
+				</tr>
+				<tr>
+					<td align="right">办公电话：</td>
+					<td><input id="tel" type="text" name="tel"></td>
+					<td align="right">移动电话：</td>
+					<td><input id="moblie" type="text" name="moblie"></td>
+				</tr>
+				<tr>
+					<td align="right">电子邮箱：</td>
+					<td><input id="email" type="text" name="email"></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="4" align="center"><input type="submit" name=""  class="submit" value="保存"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/lib/layer/layer.js"></script>
+    <script type="text/javascript" src="javascripts/mylayer.js"></script>
+	<script type="text/javascript" src="javascripts/lib/validation/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="javascripts/lib/validation/dist/localization/messages_zh.js"></script>
+    <script type="text/javascript" src="javascripts/module/system/sysuser/sysuserAdd.js"></script>
+</body>
+</html>

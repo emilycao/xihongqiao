@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layout</title>
+	<style type="text/css">
+		.leftCell {
+			position: relative;
+			float: left;
+			width: 60%;
+			margin-right: 10px;
+			height: 100%;
+		}
+		.leftCell .up {
+			margin-bottom: 10px;
+			background-color: blue;
+			height: 300px;
+		}
+		.leftCell .ldown,.leftCell .rdown {
+			width: 49%;
+			background-color: blue;
+			float: left;
+			height: 300px
+		}
+		.leftCell .ldown {
+			margin-right: 2%;
+		}
+		.rightCell {
+			position: relative;
+			float: right;
+			width:-moz-calc(40% - 10px);
+			width:-webkit-calc(40% - 10px);
+			width: calc(40% - 10px);
+			height: 100%;
+		}
+		.rightCell .up {
+			margin-bottom: 10px;
+		}
+		.rightCell .up,.rightCell .down {
+			width: 100%;
+			background-color: blue;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="leftCell">
+		<div class="up">1</div>
+		<div class="ldown">2</div>
+		<div class="rdown">3</div>
+	</div>
+	<div class="rightCell">
+		<div class="up">1</div>
+		<div class="down">2</div>
+	</div>
+</body>
+</html>

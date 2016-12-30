@@ -1,0 +1,344 @@
+.wrap {
+	background-color: #e1e5f0;
+}
+.section {
+	margin: 0.72%;
+	height: 438px;
+}
+/* 园区总览 */
+.area1 {
+	width: 40%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+.yqzl {
+	background-image: url(../images/yqzl.png);
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+.yqzl .title {
+	background-image: url(../images/icon01.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	padding-left: 25px;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.yqData {
+	width: 404px;
+	height: 288px;
+	background-image: url(../images/yqzl01.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 79px;
+	left: 62px;
+	color: #fff;
+}
+.block1 {
+	position: absolute;
+}
+.f1 {
+	left: 99px;
+    top: 13px;
+    width: 240px;
+}
+.f1 .a1 {
+	float: left;
+}
+.f1 .a2 {
+	float: right;
+	font-size: 26px;
+	margin-top: 10px;
+}
+.f2 {
+	left: 70px;
+    top: 85px;
+    width: 268px;
+}
+.f2 .a1 {
+	float: left;
+}
+.f2 .a2 {
+	float: right;
+	font-size: 30px;
+	margin-top: 10px;
+}
+.f3 {
+	left: 38px;
+    top: 185px;
+    width: 318px;
+}
+.f3 .a1 {
+	float: left;
+}
+.f3 .a2 {
+	float: right;
+	font-size: 36px;
+	margin-top: 10px;
+}
+
+.section1 {
+	float: left;
+	margin-left: 0.72%;
+	width: 59.2%;
+}
+/* 服务中心 */
+.area2 {
+	width: 65.2%;
+	position: relative;
+	float: left;
+}
+.fwzx {
+	width: 100%;
+	height: 210px;
+	background-image: url(../images/fwzx.png);
+	background-size: cover;
+	
+}
+.fwzx .title {
+	background-image: url(../images/icon02.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	padding-left: 30px;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.fwzx .total {
+	position: absolute;
+	right: 10px;
+	top: 24px;
+	color: #fff;
+}
+.fwzx ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+    top: 60px;
+}
+.fwzx ul li {
+	float: left;
+	display: block;
+	margin-left: 60px;
+	color: #fff;
+	text-align: center;
+	line-height: 45px;
+}
+.sq,.sl,.bj {
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 100px;
+}
+.sq span,.sl span,.bj span {
+	font-size: 30px;
+	line-height: 95px;
+
+}
+.fwzx ul li .sq {
+	background-image: url(../images/sq.png);
+	
+}
+.fwzx ul li .sl {
+	background-image: url(../images/sl.png);
+	
+}
+.fwzx ul li .bj {
+	background-image: url(../images/bj.png);
+	
+}
+/*协同办公*/
+.area3 {
+	width: 33.5%;
+	position: relative;
+	float: right;
+}
+.xtbg {
+	width: 100%;
+	height: 210px;
+	background-image: url(../images/xtbg.png);
+	background-size: cover;
+}
+.xtbg .title {
+	background-image: url(../images/icon06.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	padding-left: 30px;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.showData {
+	color: #fff;
+    left: 40%;
+    position: absolute;
+    top: 55%;
+    z-index: 999;
+}
+/*物业管理*/
+.area4 {
+	position: relative;
+	margin-top: 220px;
+}
+.wygl {
+	width: 100%;
+	height: 218px;
+	background-image: url(../images/wygl.png);
+	background-size: cover;
+}
+.wygl .title {
+	background-image: url(../images/icon03.png);
+	background-repeat: no-repeat;
+	height: 24px;
+	padding-left: 30px;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.wygl .fwcz {
+	background-image: url(../images/fwcz.png);
+	background-repeat: no-repeat;
+	width: 632px;
+	height: 19px;
+	position: absolute;
+	top: 118px;
+	left: 90px;
+}
+.wygl .fwcz .mapData {
+	background-image: url(../images/map.png);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 88px;
+	left: 9.5%;
+    position: absolute;
+    top: -88px;
+    color: #fff;
+    text-align: center;
+    line-height: 58px;
+}
+.wygl p {
+	text-align: center;
+	color: #fff;
+	line-height: 350px;
+}
+.bline {
+	background-color: #35deab;
+    border-radius: 5px;
+    height: 4px;
+    width: 15%;
+}
+/*产业分析*/
+.area5 {
+	width: 40%;
+	position: relative;
+	float: left;
+}
+.cyfx {
+	width: 100%;
+	height: 210px;
+	background-image: url(../images/cyfx.png);
+	background-size: cover;
+}
+.cyfx .title {
+	background-image: url(../images/icon04.png);
+	background-repeat: no-repeat;
+	height: 25px;
+	padding-left: 30px;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+/*招商引资*/
+.area6 {
+	width: 59.2%;
+	position: relative;
+	float: left;
+	margin-left: 0.72%;
+}
+.zsyz {
+	width: 100%;
+	height: 210px;
+	background-image: url(../images/zsyz.png);
+	background-size: cover;
+}
+.zsyz .title {
+	background-image: url(../images/icon05.png);
+	background-repeat: no-repeat;
+	height: 22px;
+	padding-left: 30px;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.tab .tab_menu ul {
+	position: absolute;
+	top: 12px;
+	right: 20px;
+}
+.tab .tab_menu ul li {
+	display: block;
+	float: left;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid #67a2ec;
+	margin-left: 20px;
+}
+.tab .tab_menu ul li:hover,.tab .tab_menu ul li.selected {
+	background-color: #67a2ec;
+}
+.tab_box {
+	position: absolute;
+	top: 60px;
+	left: 15px;
+}
+.aBox,.bBox {
+	float: left;
+	position: relative;
+}
+.aBox ul li,.bBox ul li {
+	display: block;
+	float: left;
+	color: #fff;
+	text-align: center;
+	margin-left: 32px;
+}
+.aBox ul li.dli,.bBox ul li.dli {
+	line-height: 85px;
+}
+.aBox .intention,.bBox .intention,.aBox .sign,.bBox .sign {
+	width: 110px;
+	height: 104px;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.aBox .intention span,.bBox .intention span,.aBox .sign span,.bBox .sign span {
+	font-size: 25px;
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+.aBox .intention {
+	background-image: url(../images/byyxqy.png);	
+}
+.aBox .sign {
+	background-image: url(../images/byqyqy.png);
+}
+.bBox .intention {
+	background-image: url(../images/bnyxqy.png);	
+}
+.bBox .sign {
+	background-image: url(../images/bnqyqy.png);
+}
